@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using SumOfNumbers.Classes;
 using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers.Tests.Processors
@@ -20,14 +21,6 @@ namespace SumOfNumbers.Tests.Processors
         public long AddTwoIntegers(long integerOne, long integerTwo)
         {
             return _addProcessor.Add(integerOne, integerTwo);
-        }
-    }
-
-    public class AddProcess : IAddProcessor
-    {
-        public long Add(long integerOne, long integerTwo)
-        {
-            return integerOne + integerTwo;
         }
     }
 }
