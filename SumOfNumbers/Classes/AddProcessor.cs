@@ -2,7 +2,7 @@
 
 namespace SumOfNumbers.Classes
 {
-    public class AddProcess : IAddProcessor
+    public class AddProcessor : IAddProcessor
     {
         public long Add(long integerOne, long integerTwo)
         {

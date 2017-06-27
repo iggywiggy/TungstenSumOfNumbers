@@ -12,7 +12,7 @@ namespace SumOfNumbers.Tests.Processors
         [OneTimeSetUp]
         public void SetUp()
         {
-            _addProcessor = new AddProcess();
+            _addProcessor = new AddProcessor();
         }
 
         [TestCase(1, 1, ExpectedResult = 2)]

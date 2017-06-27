@@ -28,7 +28,16 @@ namespace SumOfNumbers
             if (container == null)
                 throw new ArgumentNullException(nameof(container));
 
-            container.Bind<IAddProcessor>().To<AddProcess>();
+            container.Bind<IAddProcessor>().To<AddProcessor>();
+        }
+
+        private static void ConfigureCommands(IKernel container)
+        {
+            if (container == null)
+                throw new ArgumentNullException(nameof(container));
+
+            container.Bind<ICommandFactory>().To<CommandFactory>().InSingletonScope();
+            container.Bind<ICommandWithResult<long>>().To<AddCommand>().Named("AddCommand");
         }
     }
 }
