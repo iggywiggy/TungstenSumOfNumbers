@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers", "SumOfNumbers\SumOfNumbers.csproj", "{99446828-BE82-4A97-8B15-DA5AA32C6518}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfNumbers.Tests", "SumOfNumbers.Tests\SumOfNumbers.Tests.csproj", "{69331F82-720A-4A5F-A200-6C19B3587700}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99446828-BE82-4A97-8B15-DA5AA32C6518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99446828-BE82-4A97-8B15-DA5AA32C6518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99446828-BE82-4A97-8B15-DA5AA32C6518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99446828-BE82-4A97-8B15-DA5AA32C6518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69331F82-720A-4A5F-A200-6C19B3587700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69331F82-720A-4A5F-A200-6C19B3587700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69331F82-720A-4A5F-A200-6C19B3587700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69331F82-720A-4A5F-A200-6C19B3587700}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
