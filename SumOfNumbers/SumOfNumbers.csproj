@@ -108,6 +108,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infastructure\Constants.cs" />
+    <Compile Include="Infastructure\StringParameterBinder.cs" />
+    <Compile Include="Infastructure\StringParameterBinderProvider.cs" />
     <Compile Include="Interfaces\IAddProcessor.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ICommandFactory.cs" />
@@ -125,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Infastructure\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

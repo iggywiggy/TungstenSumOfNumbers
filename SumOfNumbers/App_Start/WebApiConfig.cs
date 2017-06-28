@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.ModelBinding;
+using SumOfNumbers.Infastructure;
 
 namespace SumOfNumbers
 {
@@ -9,15 +8,16 @@ namespace SumOfNumbers
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            config.BindParameter(typeof(string), new StringParameterBinder());
+            var provider = new StringParameterBinderProvider(new StringParameterBinder(), typeof(string));
 
-            // Web API routes
+            config.Services.Insert(typeof(ModelBinderProvider), 0, provider);
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                "DefaultApi",
+                "api/{controller}/{id}",
+                new {id = RouteParameter.Optional}
             );
         }
     }
