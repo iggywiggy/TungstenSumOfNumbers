@@ -5,17 +5,19 @@ namespace SumOfNumbers.Controllers
 {
     public class CalculatorController : ApiController
     {
-        private readonly IAddProcessor _addProcessor;
+        private readonly ICommandWithResult<long> _command;
 
-        public CalculatorController(IAddProcessor addProcessor)
+        public CalculatorController(ICommandWithResult<long> command)
         {
-            _addProcessor = addProcessor;
+            _command = command;
         }
 
         [HttpPost]
         public IHttpActionResult AddTwoNumbers(string integerOne, string integerTwo)
         {
-            return Ok(_addProcessor.Add(long.Parse(integerOne), long.Parse(integerTwo)));
+            _command.Execute(new object[] {integerOne, integerTwo});
+
+            return Ok(_command.Result);
         }
     }
 }

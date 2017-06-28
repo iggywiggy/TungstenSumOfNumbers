@@ -17,7 +17,7 @@ namespace SumOfNumbers.Classes
             if (args == null)
                 throw new ArgumentNullException(nameof(args));
 
-            var result = _addProcessor.Add((long) args[0], (long) args[1]);
+            var result = _addProcessor.Add(long.Parse(args[0].ToString()), long.Parse(args[1].ToString()));
 
             Result = result;
         }
