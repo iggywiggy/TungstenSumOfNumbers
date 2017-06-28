@@ -21,7 +21,10 @@ namespace SumOfNumbers.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            _command.Execute(new object[] {integerOne, integerTwo});
+            Utils.ConvertStringToInt(integerOne, out long valueOne);
+            Utils.ConvertStringToInt(integerTwo, out long valueTwo);
+
+            _command.Execute(new object[] {valueOne, valueTwo});
 
             return Ok(_command.Result);
         }
