@@ -18,7 +18,10 @@ namespace SumOfNumbers.Infastructure
             var value = GetValue(bindingContext);
 
             if (IsStringAllNumericalDigits(value))
+            {
+                bindingContext.Model = value;
                 return true;
+            }
 
             bindingContext.ModelState.AddModelError(bindingContext.ModelName,
                 Constants.ContainsNumericsErrorMessage);

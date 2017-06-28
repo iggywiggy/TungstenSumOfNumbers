@@ -11,9 +11,14 @@ namespace SumOfNumbers.Infastructure
 
         public StringParameterBinderProvider(StringParameterBinder stringParameterBinder, Type type)
         {
-            _type = type ?? throw new ArgumentNullException(nameof(type));
-            _stringParameterBinder = stringParameterBinder ??
-                                     throw new ArgumentNullException(nameof(stringParameterBinder));
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+
+            if (stringParameterBinder == null)
+                throw new ArgumentNullException(nameof(stringParameterBinder));
+
+            _type = type;
+            _stringParameterBinder = stringParameterBinder;
         }
 
         public override IModelBinder GetBinder(HttpConfiguration configuration, Type modelType)

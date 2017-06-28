@@ -1,4 +1,6 @@
 ﻿using System.Web.Http;
+using System.Web.Http.ModelBinding;
+using SumOfNumbers.Infastructure;
 using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers.Controllers
@@ -13,8 +15,12 @@ namespace SumOfNumbers.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult AddTwoNumbers(string integerOne, string integerTwo)
+        public IHttpActionResult AddTwoNumbers([ModelBinder(typeof(StringParameterBinder))] string integerOne,
+            [ModelBinder(typeof(StringParameterBinder))] string integerTwo)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             _command.Execute(new object[] {integerOne, integerTwo});
 
             return Ok(_command.Result);
