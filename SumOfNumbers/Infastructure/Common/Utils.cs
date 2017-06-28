@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace SumOfNumbers.Infastructure
+namespace SumOfNumbers.Infastructure.Common
 {
     public class Utils
     {

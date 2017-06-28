@@ -1,1 +1,5 @@
-2017-06-28 11:25:34,629 INFO  [9] SumOfNumbers.Controllers.CalculatorController - DateTime: 28/06/2017 11:25:34, ValueOne: 2, ValueTwo: 557, Result: 559
+2017-06-28 11:45:21,989 INFO  [10] SumOfNumbers.Controllers.LoggerController - DateTime: 28/06/2017 11:45:21, Accessed Logging Controller, Result: 
+2017-06-28 11:45:25,322 INFO  [10] SumOfNumbers.Controllers.CalculatorController - DateTime: 28/06/2017 11:45:25, ValueOne: 2, ValueTwo: 557, Result: 559
+2017-06-28 11:45:28,517 INFO  [10] SumOfNumbers.Controllers.LoggerController - DateTime: 28/06/2017 11:45:28, Accessed Logging Controller, Result: 2017-06-28 11:45:21,989 INFO  [10] SumOfNumbers.Controllers.LoggerController - DateTime: 28/06/2017 11:45:21, Accessed Logging Controller, Result: 
+2017-06-28 11:45:25,322 INFO  [10] SumOfNumbers.Controllers.CalculatorController - DateTime: 28/06/2017 11:45:25, ValueOne: 2, ValueTwo: 557, Result: 559
+

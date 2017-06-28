@@ -1,6 +1,6 @@
 ﻿using SumOfNumbers.Interfaces;
 
-namespace SumOfNumbers.Classes
+namespace SumOfNumbers.Classes.Processors
 {
     public class AddProcessor : IAddProcessor
     {

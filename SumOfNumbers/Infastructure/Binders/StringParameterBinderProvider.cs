@@ -2,7 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 
-namespace SumOfNumbers.Infastructure
+namespace SumOfNumbers.Infastructure.Binders
 {
     public class StringParameterBinderProvider : ModelBinderProvider
     {

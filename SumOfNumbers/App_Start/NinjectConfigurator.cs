@@ -1,7 +1,8 @@
 ﻿using System;
 using log4net.Config;
 using Ninject;
-using SumOfNumbers.Classes;
+using SumOfNumbers.Classes.Commands;
+using SumOfNumbers.Classes.Processors;
 using SumOfNumbers.Infastructure.Logging;
 using SumOfNumbers.Interfaces;
 
@@ -33,6 +34,7 @@ namespace SumOfNumbers
                 throw new ArgumentNullException(nameof(container));
 
             container.Bind<IAddProcessor>().To<AddProcessor>();
+            container.Bind<IReadFileProcessor>().To<ReadFileProcessor>();
         }
 
         private static void ConfigureCommands(IKernel container)
@@ -42,6 +44,7 @@ namespace SumOfNumbers
 
             container.Bind<ICommandFactory>().To<CommandFactory>();
             container.Bind<ICommandWithResult<long>>().To<AddCommand>().Named("AddCommand");
+            container.Bind<ICommandWithResult<string>>().To<ReadLogFileCommand>().Named("ReadFileCommand");
         }
 
         private static void ConfigureLog4Net(IKernel container)

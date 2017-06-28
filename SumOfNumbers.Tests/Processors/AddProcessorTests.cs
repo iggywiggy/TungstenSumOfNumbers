@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using SumOfNumbers.Classes;
+using SumOfNumbers.Classes.Processors;
 using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers.Tests.Processors

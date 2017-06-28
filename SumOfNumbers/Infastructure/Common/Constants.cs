@@ -1,4 +1,4 @@
-﻿namespace SumOfNumbers.Infastructure
+﻿namespace SumOfNumbers.Infastructure.Common
 {
     public class Constants
     {

@@ -104,20 +104,25 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\WebContainerManager.cs" />
-    <Compile Include="Classes\AddCommand.cs" />
-    <Compile Include="Classes\AddProcessor.cs" />
-    <Compile Include="Classes\CommandFactory.cs" />
+    <Compile Include="Classes\Commands\AddCommand.cs" />
+    <Compile Include="Classes\Processors\AddProcessor.cs" />
+    <Compile Include="Classes\Commands\CalculatorCommandFactory.cs" />
+    <Compile Include="Classes\Commands\ReadLogFileCommand.cs" />
+    <Compile Include="Classes\Processors\ReadFileProcessor.cs" />
     <Compile Include="Controllers\CalculatorController.cs" />
+    <Compile Include="Controllers\LoggerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infastructure\Constants.cs" />
+    <Compile Include="Infastructure\Common\CommandEnum.cs" />
+    <Compile Include="Infastructure\Common\Constants.cs" />
+    <Compile Include="Interfaces\IReadFileProcessor.cs" />
     <Compile Include="Infastructure\Logging\ExceptionLogger.cs" />
     <Compile Include="Infastructure\Logging\LogManagerAdapter.cs" />
     <Compile Include="Infastructure\Logging\LogWriter.cs" />
-    <Compile Include="Infastructure\StringParameterBinder.cs" />
-    <Compile Include="Infastructure\StringParameterBinderProvider.cs" />
-    <Compile Include="Infastructure\Utils.cs" />
+    <Compile Include="Infastructure\Binders\StringParameterBinder.cs" />
+    <Compile Include="Infastructure\Binders\StringParameterBinderProvider.cs" />
+    <Compile Include="Infastructure\Common\Utils.cs" />
     <Compile Include="Interfaces\IAddProcessor.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ICommandFactory.cs" />

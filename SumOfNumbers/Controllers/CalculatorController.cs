@@ -2,7 +2,8 @@
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using log4net;
-using SumOfNumbers.Infastructure;
+using SumOfNumbers.Infastructure.Binders;
+using SumOfNumbers.Infastructure.Common;
 using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers.Controllers

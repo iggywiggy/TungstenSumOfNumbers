@@ -1,6 +1,6 @@
 ﻿using Moq;
 using NUnit.Framework;
-using SumOfNumbers.Classes;
+using SumOfNumbers.Classes.Commands;
 using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers.Tests.Commands

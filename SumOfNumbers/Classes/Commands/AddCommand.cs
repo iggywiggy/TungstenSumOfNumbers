@@ -1,7 +1,7 @@
 ﻿using System;
 using SumOfNumbers.Interfaces;
 
-namespace SumOfNumbers.Classes
+namespace SumOfNumbers.Classes.Commands
 {
     public class AddCommand : ICommandWithResult<long>
     {

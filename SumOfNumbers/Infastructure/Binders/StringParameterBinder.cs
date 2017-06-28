@@ -2,8 +2,9 @@
 using System.Linq;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
+using SumOfNumbers.Infastructure.Common;
 
-namespace SumOfNumbers.Infastructure
+namespace SumOfNumbers.Infastructure.Binders
 {
     public class StringParameterBinder : IModelBinder
     {
