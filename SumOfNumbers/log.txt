@@ -1,0 +1,1 @@
+2017-06-28 11:25:34,629 INFO  [9] SumOfNumbers.Controllers.CalculatorController - DateTime: 28/06/2017 11:25:34, ValueOne: 2, ValueTwo: 557, Result: 559
