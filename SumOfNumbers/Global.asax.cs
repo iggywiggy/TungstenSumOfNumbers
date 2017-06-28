@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
+using SumOfNumbers.Interfaces;
 
 namespace SumOfNumbers
 {
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+        }
+
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+
+            if (exception == null)
+                return;
+
+            var log = WebContainerManager.Get<ILogManager>().GetLog(typeof(WebApiApplication));
+            log.Error("Unhandled exception.", exception);
         }
     }
 }

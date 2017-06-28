@@ -1,4 +1,9 @@
 ﻿using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using System.Web.Http.Tracing;
+using SumOfNumbers.Infastructure.Logging;
+using SumOfNumbers.Interfaces;
+using ExceptionLogger = SumOfNumbers.Infastructure.Logging.ExceptionLogger;
 
 namespace SumOfNumbers
 {
@@ -6,10 +11,8 @@ namespace SumOfNumbers
     {
         public static void Register(HttpConfiguration config)
         {
-            //config.BindParameter(typeof(string), new StringParameterBinder());
-            //var provider = new StringParameterBinderProvider(new StringParameterBinder(), typeof(string));
-
-            //config.Services.Insert(typeof(ModelBinderProvider), 0, provider);
+            config.Services.Replace(typeof(ITraceWriter), new LogWriter(WebContainerManager.Get<ILogManager>()));
+            config.Services.Add(typeof(IExceptionLogger), new ExceptionLogger(WebContainerManager.Get<ILogManager>()));
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
