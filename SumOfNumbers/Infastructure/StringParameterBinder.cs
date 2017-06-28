@@ -15,32 +15,57 @@ namespace SumOfNumbers.Infastructure
             if (bindingContext == null)
                 throw new ArgumentNullException(nameof(bindingContext));
 
-            var value = GetValue(bindingContext);
+            if (bindingContext.ModelType != typeof(string))
+                return false;
 
-            if (IsStringAllNumericalDigits(value))
+            var value = bindingContext.ValueProvider.GetValue(bindingContext.ModelName);
+
+            if (value == null)
+                return false;
+
+            var key = value.AttemptedValue;
+
+
+            return ValidateInput(bindingContext, key);
+        }
+
+        private static bool ValidateInput(ModelBindingContext bindingContext, string key)
+        {
+            if (bindingContext == null)
+                throw new ArgumentNullException(nameof(bindingContext));
+
+            if (string.IsNullOrEmpty(key))
             {
-                bindingContext.Model = value;
+                bindingContext.ModelState.AddModelError(bindingContext.ModelName, Constants.WrongValueType);
+                return false;
+            }
+
+            if (HasNoneNumericalDigits(key))
+            {
+                bindingContext.ModelState.AddModelError(bindingContext.ModelName,
+                    Constants.ContainsNoneNumericsErrorMessage);
+                return false;
+            }
+
+
+            if (Utils.ConvertStringToInt(key, out long _))
+            {
+                bindingContext.Model = key;
                 return true;
             }
 
             bindingContext.ModelState.AddModelError(bindingContext.ModelName,
-                Constants.ContainsNumericsErrorMessage);
+                Constants.CannotConvertStringToInteger);
             return false;
         }
 
-        private static bool IsStringAllNumericalDigits(string toBeChecked)
+
+        private static bool HasNoneNumericalDigits(string toBeChecked)
         {
-            if (string.IsNullOrEmpty(toBeChecked))
+            if (toBeChecked == null)
                 throw new ArgumentNullException(nameof(toBeChecked));
 
-            return toBeChecked.All(char.IsNumber);
-        }
-
-        private string GetValue(ModelBindingContext context)
-        {
-            var value = context.ValueProvider.GetValue(context.ModelName);
-
-            return value.AttemptedValue;
+            return string.IsNullOrEmpty(toBeChecked) && !toBeChecked.All(char.IsNumber);
         }
     }
 }
